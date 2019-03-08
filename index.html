@@ -1,0 +1,30 @@
+  <script>
+
+  var rightAnsw = [];
+  var wrongAnsw = [];
+	
+  for(var i = 0; i < 12; i++) {
+    var firstNumb = Math.floor(Math.random() * 89) + 10;
+    var secondNumb = Math.floor(Math.random() * 89) + 10;
+        
+		
+    var userAnsw = +prompt(`${firstNumb} * ${secondNumb} =`);
+    var rightResult = firstNumb * secondNumb;
+		
+	if(userAnsw == rightResult) {
+      rightAnsw.push([`${firstNumb} * ${secondNumb} =`, userAnsw]);
+    }else {
+      wrongAnsw.push([`${firstNumb} * ${secondNumb} =`, userAnsw, rightResult]);
+      }
+    }
+	
+  console.log("Your right answers:");
+  console.log(rightAnsw);
+  
+  console.log("Your wrong answers:");
+  for(var i = 0; i < wrongAnsw.length; i++) {
+  console.log(wrongAnsw[i][0], wrongAnsw[i][1], "The right answer is:", wrongAnsw[i][2]);
+  }
+  
+  console.log("Your mark is:", rightAnsw.length);
+   </script>
